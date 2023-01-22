@@ -3,8 +3,9 @@ import { useTaskListHook } from '../../customHooks/taskList/useTaskListHook';
 
 const ListTask = ({ task, modifyTask, isEmptyTask, deleteTask, modificando, SetModify }) => {
     // const { task, setTask, insertTask, deleteTask, modifyTask, isEmptyTask } = useTaskListHook();
-    const handleToogleModify = (idMod) => {
-        console.log(modificando)
+
+    const handleModifyAction = (idMod, e) => {
+        modifyTask(idMod, e.target['textModificar-form'].value)
         SetModify('')
     }
 
@@ -15,7 +16,6 @@ const ListTask = ({ task, modifyTask, isEmptyTask, deleteTask, modificando, SetM
 
     const handleDeleteTask = (id) => {
         deleteTask(id)
-        // console.log(e)
     }
 
 
@@ -25,14 +25,15 @@ const ListTask = ({ task, modifyTask, isEmptyTask, deleteTask, modificando, SetM
                 !isEmptyTask() && task.map(taskElement => {
                     return <React.Fragment key={taskElement.id}>
                         {
-                            <div >{taskElement.actionTask}
+                            <div >
                                 {(modificando === taskElement.id)
                                     ?
-                                    <form className='formModificar' onSubmit={() => handleToogleModify(taskElement.id)}>
-                                        <input className='textModif-List' name='textModificar-form' type='text' />
+                                    <form className='formModificar' onSubmit={(e) => handleModifyAction(taskElement.id, e)}>
+                                        <input className='textModif-List' name='textModificar-form' type='text' defaultValue={taskElement.actionTask} />
                                     </form>
                                     :
                                     <>
+                                        {taskElement.actionTask}
                                         <input onClick={() => handleModifyTask(taskElement.id)} className='btnModif-List' name='btnModificar-form' type='button' value='modificar' />
                                         <input onClick={() => handleDeleteTask(taskElement.id)} className='btnDelete-List' name='btnDelete-form' type='button' value='Eliminar' />
                                     </>

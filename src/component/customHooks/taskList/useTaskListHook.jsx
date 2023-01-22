@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 
 const useTaskListHook = () => {
 
-    // const [task, setTask] = useState([{ id: 1, actionTask: 'programar' }, { id: 2, actionTask: 'Estudiar' }]);
-    const [task, setTask] = useState([]);
+    const [task, setTask] = useState([{ id: 1, actionTask: 'programar' }, { id: 2, actionTask: 'Estudiar' }, { id: 3, actionTask: 'millonario' }]);
     const [modificando, SetModify] = useState('');
 
 
@@ -14,21 +13,27 @@ const useTaskListHook = () => {
     }
 
     const deleteTask = (idTask = null) => {
-        // console.log(delTask);
         const temp = task.filter((elementX) => elementX.id !== idTask)
         setTask(temp);
     }
 
-    const modifyTask = (modTask, idTask = null) => {
-        const temp = task.find((elementX) => elementX.id !== modTask.id)
-        setTask(temp);
+    const modifyTask = (idTask, modTask) => {
+        console.log(`id ${idTask} text: ${modTask}`)
+        if (!modTask) {
+            alert('Se eliminará el item debido a modificacion vacia')
+            deleteTask(idTask)
+        } else {
+            const mod = { id: idTask, actionTask: modTask }
+            const temp = task.find(elementX => elementX.id === idTask)
+            temp.actionTask = modTask;
+            console.log(temp)
+        }
     }
+
     const isEmptyTask = () => {
         return task.length === 0
     }
-
     return { task, setTask, insertTask, deleteTask, modifyTask, isEmptyTask, modificando, SetModify }
-
 }
 
 export { useTaskListHook };

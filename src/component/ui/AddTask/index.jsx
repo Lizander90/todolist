@@ -1,8 +1,7 @@
 import React from 'react'
 import { useTaskListHook } from '../../customHooks/taskList/useTaskListHook'
 
-const AddTask = ({insertTask}) => {
-    // const { task, setTask, insertTask, deleteTask, modifyTask, isEmptyTask } = useTaskListHook();
+const AddTask = ({ insertTask }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -19,7 +18,7 @@ const AddTask = ({insertTask}) => {
             <label>accion:
                 <input type={'text'} placeholder='tarea' name='inputAddTask' className='inputText-formAddList' />
             </label>
-            <input type={'button'} value='Entrar' className='buttonAdd-formAddList' onClick={handleSubmit} />
+            <input type={'submit'} value='Entrar' className='buttonAdd-formAddList' />
         </form>
     </>
 

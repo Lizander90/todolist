@@ -14,6 +14,7 @@ function App() {
     <>
       <AddTask insertTask={insertTask} />
       <hr />
+      
       <ListTask
         modificando={modificando}
         SetModify={SetModify}
@@ -22,6 +23,8 @@ function App() {
         deleteTask={deleteTask}
         modifyTask={modifyTask}
       />
+
+      
 
     </>
   )
