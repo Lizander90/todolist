@@ -8,13 +8,21 @@ import { useEffect } from 'react';
 
 
 function App() {
-  const { task, setTask, insertTask, deleteTask, modifyTask, isEmptyTask } = useTaskListHook();
+  const { task, setTask, insertTask, deleteTask, modifyTask, isEmptyTask, modificando, SetModify } = useTaskListHook();
 
   return (
     <>
       <AddTask insertTask={insertTask} />
       <hr />
-      <ListTask task={task} isEmptyTask={isEmptyTask} deleteTask={deleteTask} />
+      <ListTask
+        modificando={modificando}
+        SetModify={SetModify}
+        task={task}
+        isEmptyTask={isEmptyTask}
+        deleteTask={deleteTask}
+        modifyTask={modifyTask}
+      />
+
     </>
   )
 }
