@@ -1,3 +1,7 @@
+* {
+  padding: 0;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,37 +9,57 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  background-color: rgb(195, 194, 194);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.formAddList {
+  display: flex;
+  gap: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.inputText {
+  border-radius: 3px;
+  outline-color: #61dafbaa;
+  border-color: rgb(148, 148, 247);
 }
 
-.card {
-  padding: 2em;
+.buttonList {
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  margin-left: 2px;
 }
 
-.read-the-docs {
-  color: #888;
+.itemList {
+  background-color: aliceblue;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+
+.itemList-task {
+  
+}
+
+
+
+.buttonList:hover {
+  cursor: pointer;
+}
+
+.buttonAdd-formAddList {
+  background-color: #61fb61aa;
+}
+
+.btnDelete-List {
+  background-color: #fb6161aa;
+}
+
+.btnModif-List {
+  background-color: #61fb8daa;
 }

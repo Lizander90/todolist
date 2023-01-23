@@ -13,9 +13,9 @@ const AddTask = ({ insertTask }) => {
     return <>
         <form className='formAddList' onSubmit={handleSubmit}>
             <label>accion:
-                <input type={'text'} placeholder='tarea' name='inputAddTask' className='inputText-formAddList' />
+                <input type={'text'} placeholder='tarea' name='inputAddTask' className='inputText inputText-formAddList' />
             </label>
-            <input type={'submit'} value='Entrar' className='buttonAdd-formAddList' />
+            <input type={'submit'} value='Entrar' className='buttonList buttonAdd-formAddList' />
         </form>
     </>
 
