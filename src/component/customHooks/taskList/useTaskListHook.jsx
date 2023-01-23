@@ -9,7 +9,6 @@ const useTaskListHook = () => {
     const insertTask = (newTask) => {
         const nwTask = { id: crypto.randomUUID(), actionTask: newTask }
         setTask(prev => [...prev, nwTask]);
-        console.log(task);
     }
 
     const deleteTask = (idTask = null) => {
@@ -18,7 +17,6 @@ const useTaskListHook = () => {
     }
 
     const modifyTask = (idTask, modTask) => {
-        console.log(`id ${idTask} text: ${modTask}`)
         if (!modTask) {
             alert('Se eliminará el item debido a modificacion vacia')
             deleteTask(idTask)
@@ -26,7 +24,6 @@ const useTaskListHook = () => {
             const mod = { id: idTask, actionTask: modTask }
             const temp = task.find(elementX => elementX.id === idTask)
             temp.actionTask = modTask;
-            console.log(temp)
         }
     }
 

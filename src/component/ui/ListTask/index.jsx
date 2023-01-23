@@ -11,7 +11,6 @@ const ListTask = ({ task, modifyTask, isEmptyTask, deleteTask, modificando, SetM
 
     const handleModifyTask = (idMod) => {
         SetModify(idMod)
-        console.log(idMod)
     }
 
     const handleDeleteTask = (id) => {
